@@ -8,7 +8,8 @@ import logoUrl from '/logo.jpeg?url';
 import { icons } from './icons.js';
 
 // ── Config ────────────────────────────────────────────────────────
-const API_BASE = import.meta.env.VITE_API_BASE || window.location.origin;
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE = import.meta.env.VITE_API_BASE || (isLocal ? window.location.origin : 'https://app-api.avlokai.com');
 const API_PREFIX = '/api/releases';
 
 // ── State ─────────────────────────────────────────────────────────
